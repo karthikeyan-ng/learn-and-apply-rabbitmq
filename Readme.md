@@ -119,3 +119,10 @@ appropriate `data type`
 >TIP: By using this `Header Exchange` `Message Producer` will talk to `Exchange` whereas `Message Consumer` will talk to `Queue` to get the message.
 
 > For Source code refer `com.techstack.queue.headers` package
+
+#RabbitMQ with Spring Boot
+Spring Boot and RabbitMQ provides 
+- RabbitMQ Template - To Produce Message
+- RabbitMQ Listener - To Consume Message
+
+For Producer Example: Refer `com.techstack.rabbitmq.controller.RabbitMqController#processName`
