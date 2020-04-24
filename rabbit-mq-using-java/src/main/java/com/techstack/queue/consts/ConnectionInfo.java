@@ -19,7 +19,8 @@ public class ConnectionInfo {
     public static final String TV_QUEUE = "TV";
     public static final String AC_QUEUE = "AC";
 
-    public static final String EXCHANGE_NAME = "direct-exchange";
+    public static final String DIRECT_EXCHANGE_NAME = "direct-exchange";
+    public static final String FANOUT_EXCHANGE_NAME = "fanout-exchange";
 
     public static final String ROUTING_KEY_FOR_MOBILE = "mobile";
     public static final String ROUTING_KEY_FOR_TV = "tv";

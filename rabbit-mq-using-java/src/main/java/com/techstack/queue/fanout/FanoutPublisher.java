@@ -1,4 +1,4 @@
-package com.techstack.queue.direct;
+package com.techstack.queue.fanout;
 
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
@@ -11,12 +11,13 @@ import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
 import java.util.concurrent.TimeoutException;
 
+import static com.techstack.queue.consts.ConnectionInfo.DIRECT_EXCHANGE_NAME;
+import static com.techstack.queue.consts.ConnectionInfo.FANOUT_EXCHANGE_NAME;
 import static com.techstack.queue.consts.ConnectionInfo.ROUTING_KEY_FOR_AC;
 import static com.techstack.queue.consts.ConnectionInfo.ROUTING_KEY_FOR_MOBILE;
-import static com.techstack.queue.consts.ConnectionInfo.DIRECT_EXCHANGE_NAME;
 import static com.techstack.queue.consts.ConnectionInfo.ROUTING_KEY_FOR_TV;
 
-public class DirectPublisher {
+public class FanoutPublisher {
 
     public static void main(String[] args) throws URISyntaxException, IOException, TimeoutException, NoSuchAlgorithmException, KeyManagementException {
         ConnectionFactory factory = ConnectionInfo.createConnectionFactory();
@@ -24,16 +25,8 @@ public class DirectPublisher {
         Channel channel = connection.createChannel();
 
         // Mobile
-        String mobileMessage = "Consumer would like to purchase an Apple iPhone11";
-        channel.basicPublish(DIRECT_EXCHANGE_NAME, ROUTING_KEY_FOR_MOBILE, null, mobileMessage.getBytes());
-
-        // TV
-        String tvMessage = "Consumer would like to purchase an Apple TV";
-        channel.basicPublish(DIRECT_EXCHANGE_NAME, ROUTING_KEY_FOR_TV, null, tvMessage.getBytes());
-
-        // AC
-        String acMessage = "Consumer would like to purchase Voltas AC";
-        channel.basicPublish(DIRECT_EXCHANGE_NAME, ROUTING_KEY_FOR_AC, null, acMessage.getBytes());
+        String mobileMessage = "Consumer would like to purchase an Apple iPhone11 and Voltas AC";
+        channel.basicPublish(FANOUT_EXCHANGE_NAME, "", null, mobileMessage.getBytes());
 
         channel.close();
         connection.close();
