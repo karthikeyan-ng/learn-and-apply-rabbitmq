@@ -88,3 +88,34 @@ Some Examples about Topic Key:
 
 > For Source code refer `com.techstack.queue.topic` package
 
+##Header Exchange
+### What is Header Exchange
+Messages with Header from Producer side will talk to HeaderExchange and based on the Exchange Header Configuration it would
+route the message to specific Queue based on the `Header "x-match = any | all"`. Here `any` is a `OR` condition and `all` means `AND` condition.
+
+![Alt](images/HeaderExchange.png)
+
+For example: 
+* It's a key value pair from producer side.
+```json
+header = {
+"item1 = mobile",
+"item2 = television"
+}
+```
+* In the Header Exchange settings, it is configured as `x-match = any` which means inside the incoming message
+`any` of the `key = value` matched attached with this Exchange Queue, the message would route to that Queue.
+```json
+Header = { "x-match = any",
+           "item1 = mobile",
+           "item2 =  mob"
+         }
+```
+
+### How to create a Header Exchange?
+Once you created a Header Exchange in AMQP Server, you have to select the `Bindings`. Under the Bindings section, select `Queue Name` and use `arguments` `key` = `value` select 
+appropriate `data type`
+
+>TIP: By using this `Header Exchange` `Message Producer` will talk to `Exchange` whereas `Message Consumer` will talk to `Queue` to get the message.
+
+> For Source code refer `com.techstack.queue.headers` package

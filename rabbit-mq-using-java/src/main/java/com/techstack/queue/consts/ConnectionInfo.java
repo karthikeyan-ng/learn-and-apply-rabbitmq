@@ -22,13 +22,14 @@ public class ConnectionInfo {
     public static final String DIRECT_EXCHANGE_NAME = "direct-exchange";
     public static final String FANOUT_EXCHANGE_NAME = "fanout-exchange";
     public static final String TOPIC_EXCHANGE_NAME = "topic-exchange";
+    public static final String HEADERS_EXCHANGE_NAME = "headers-exchange";
 
     public static final String ROUTING_KEY_FOR_MOBILE = "mobile";
     public static final String ROUTING_KEY_FOR_TV = "tv";
     public static final String ROUTING_KEY_FOR_AC = "ac";
 
     public static ConnectionFactory createConnectionFactory() throws NoSuchAlgorithmException, KeyManagementException,
-            URISyntaxException, IOException, TimeoutException {
+            URISyntaxException {
         ConnectionFactory factory = new ConnectionFactory();
         factory.setUri(URI);
         factory.setUsername(USER_NAME);
