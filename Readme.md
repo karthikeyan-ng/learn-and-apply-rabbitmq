@@ -120,7 +120,7 @@ appropriate `data type`
 
 > For Source code refer `com.techstack.queue.headers` package
 
-#RabbitMQ with Spring Boot
+# RabbitMQ with Spring Boot
 Spring Boot and RabbitMQ provides 
 - RabbitMQ Template - To Produce Message
 - RabbitMQ Listener - To Consume Message
