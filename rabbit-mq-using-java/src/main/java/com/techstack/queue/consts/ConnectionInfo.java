@@ -21,6 +21,7 @@ public class ConnectionInfo {
 
     public static final String DIRECT_EXCHANGE_NAME = "direct-exchange";
     public static final String FANOUT_EXCHANGE_NAME = "fanout-exchange";
+    public static final String TOPIC_EXCHANGE_NAME = "topic-exchange";
 
     public static final String ROUTING_KEY_FOR_MOBILE = "mobile";
     public static final String ROUTING_KEY_FOR_TV = "tv";
