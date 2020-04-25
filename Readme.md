@@ -120,9 +120,34 @@ appropriate `data type`
 
 > For Source code refer `com.techstack.queue.headers` package
 
+## Default Exchange
+### What is Default Exchange
+Basically Default Exchange is type of Direct Exchange which doesn't have any name.  
+If you open RabbitMQ Exchanges tab you will see `(AMQP fefault)` which is of type `direct`.  
+
+
+
 # RabbitMQ with Spring Boot
 Spring Boot and RabbitMQ provides 
 - RabbitMQ Template - To Produce Message
 - RabbitMQ Listener - To Consume Message
 
 For Producer Example: Refer `com.techstack.rabbitmq.controller.RabbitMqController#processName`
+
+# Pivotal Cloud Foundry
+- Cloud Foundry is an open source cloud Platform As A Service (PaaS) on which developers can build, deploy, run and scale application.
+- Setting Up Pivotal Cloud Foundry and Creating Organization and CLI installation
+- Creating RabbitMQ service
+- Spring Boot Deployment
+- Spring Boot Deployment using Spring Cloud (Dependency)
+
+### Steps to Create a RabbitMQ cloud service
+- Login to your [PCF Console](https://console.run.pivotal.io)
+- Click on the Marketplace and search for "CloudAMQP" service
+- Select Free Plan called "Little Lemur"
+- Create a service with your "Service-Name"
+- Once service instance up and running, click **Manage** button. It will open a Cloud AMQP.
+- In the LHS you will find **RabbitMQ Manager**
+    - Alternatively you can use **Hosts** information
+    - It will ask you to enter username and password
+
