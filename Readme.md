@@ -151,3 +151,10 @@ For Producer Example: Refer `com.techstack.rabbitmq.controller.RabbitMqControlle
     - Alternatively you can use **Hosts** information
     - It will ask you to enter username and password
 
+## References
+Cloud AMQP is offering a service for RabbitMQ on Cloud. For more information refer [CloudAMQP](https://www.cloudamqp.com/docs/index.html).  
+
+Integrating with Java: https://www.cloudamqp.com/docs/java.html  
+Someo of the usecases explained here: https://www.cloudamqp.com/docs/usecases.html  
+
+
